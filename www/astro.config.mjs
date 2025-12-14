@@ -13,6 +13,10 @@ export default defineConfig({
   site: `https://create.t3.gg/`,
   output: "server",
   adapter: vercel(),
+  server: {
+    host: true, // binds to 0.0.0.0 for container accessibility
+    port: 4321,
+  },
   markdown: {
     remarkPlugins: [remarkCodeTitles],
     rehypePlugins: [

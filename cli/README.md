@@ -108,6 +108,51 @@ bun create t3-app@latest
 
 For more advanced usage, check out the [CLI docs](https://create.t3.gg/en/installation).
 
+## Preview in Browser (Container)
+
+When running the Astro dev server in a container-based environment (Docker, DevContainers, cloud IDEs, etc.), the server is configured to bind to `0.0.0.0:4321` for accessibility:
+
+### Running the Dev Server
+
+From the project root:
+
+```bash
+npm run dev:www
+```
+
+Or from the `www` directory:
+
+```bash
+cd www
+npm run dev
+```
+
+The server will start and listen on `0.0.0.0:4321`.
+
+### Accessing the Preview
+
+1. **Use your platform's Ports/Preview feature** to access port `4321`
+   - Most container platforms (GitHub Codespaces, GitPod, VS Code DevContainers, etc.) automatically detect exposed ports
+   - Look for a "Ports" panel or notification about forwarded ports
+   - Open the forwarded URL provided by your platform
+
+2. **Sanity check from inside the container:**
+   ```bash
+   curl -I http://127.0.0.1:4321
+   ```
+   This should return HTTP headers if the server is running correctly.
+
+3. **Local development:** If you're running locally (not in a container), you can use:
+   ```bash
+   cd www
+   npm run dev:local
+   ```
+   This runs Astro with default host settings.
+
+### Note
+
+The dev server binds to `0.0.0.0` (all network interfaces) to allow access from outside the container. The specific URL you'll use depends on your platform's port forwarding mechanism.
+
 <h2 id="community">Community</h2>
 
 For help, discussion about best practices, or any other conversation that would benefit create-t3-app:
