@@ -1,4 +1,8 @@
 {
+  "buildCommand": "pnpm turbo --filter=www build",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "framework": null,
+  "outputDirectory": "www/.vercel/output",
   "headers": [
     {
       "source": "/:all*(ttf|otf|woff|woff2)",

@@ -1,0 +1,12 @@
+# Ignore the CLI package - it's not part of the web deployment
+cli/
+
+# Ignore development files
+.changeset/
+.codesandbox/
+.github/
+.vscode/
+.gitpod.yml
+
+# Ignore documentation
+CONTRIBUTING.md
