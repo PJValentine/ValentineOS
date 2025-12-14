@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "astro dev --host 0.0.0.0",
+    "start": "astro dev --host 0.0.0.0",
     "check": "astro check",
     "clean": "rm -rf node_modules .turbo dist .eslintcache",
     "format": "prettier '**/*.{cjs,mjs,ts,tsx,md,json,astro}' --ignore-path ../.gitignore --ignore-unknown --write",

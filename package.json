@@ -25,7 +25,12 @@
     "node": ">=20.0.0"
   },
   "packageManager": "pnpm@10.8.0",
+  "workspaces": [
+    "cli",
+    "www"
+  ],
   "scripts": {
+    "dev": "turbo --filter=www dev",
     "typecheck": "turbo typecheck",
     "build:cli": "turbo --filter=create-t3-app build",
     "build:www": "turbo --filter=www build",
