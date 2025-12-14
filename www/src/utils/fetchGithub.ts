@@ -39,6 +39,12 @@ export const fetchGithub = async <T extends "commits" | "repo">(
 
   const token = import.meta.env.PUBLIC_GITHUB_TOKEN as string | undefined;
 
+  // Skip GitHub API calls in development if token is "skip" or network is unavailable
+  if (token === "skip") {
+    console.warn("GitHub API calls disabled (token set to 'skip')");
+    return null;
+  }
+
   if (!token) {
     const msg =
       "No Github token found. Please set PUBLIC_GITHUB_TOKEN in .env to avoid rate limiting.";
