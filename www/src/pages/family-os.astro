@@ -1,0 +1,30 @@
+---
+import FamilyPreview from "../components/familyPreview/FamilyPreview";
+import LandingPage from "../layouts/landingPage.astro";
+---
+
+<LandingPage>
+  <section class="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+    <p class="text-sm uppercase tracking-[0.3em] text-[#83c5be]">Family OS preview</p>
+    <h1 class="mt-3 text-4xl font-semibold leading-tight text-white md:text-5xl">
+      A calm source of truth for family life
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-white/80">
+      Try a working snapshot of the daily view inspired by the PRD: routines, one-off tasks, and scheduled events in one
+      quiet place. Adjust the owner filter to see how the view adapts without adding pressure.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3 text-sm text-white/70">
+      <span class="rounded-full bg-white/5 px-3 py-1">Mobile-first</span>
+      <span class="rounded-full bg-white/5 px-3 py-1">Minimal reminders</span>
+      <span class="rounded-full bg-white/5 px-3 py-1">Auto-reset routines</span>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pb-16">
+    <div class="rounded-[28px] border border-white/10 bg-gradient-to-br from-[#0b1021] via-[#10253c] to-[#120d2a] p-1 shadow-2xl shadow-black/40">
+      <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-white/5 via-white/0 to-[#0b1120] p-6">
+        <FamilyPreview client:load />
+      </div>
+    </div>
+  </section>
+</LandingPage>
